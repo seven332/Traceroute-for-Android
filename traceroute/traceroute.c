@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <sys/socket.h>
 #include <poll.h>
+#include <linux/in6.h>
 #include <netinet/icmp6.h>
 #include <netinet/ip_icmp.h>
 #include <netinet/in.h>
@@ -25,7 +26,7 @@
 #include <linux/errqueue.h>
 
 /*  XXX: Remove this when things will be defined properly in netinet/ ...  */
-#include "flowlabel.h"
+//#include "flowlabel.h"
 
 #include <clif.h>
 #include "version.h"
@@ -579,7 +580,7 @@ static CLIF_option option_list[] = {
 			    "port is " _TEXT(DEF_DCCP_PORT) ")",
 			    set_module, "dccp", 0, CLIF_EXTRA },
 	{ "P", "protocol", "prot", "Use raw packet of protocol %s "
-			    "for tracerouting", 
+			    "for tracerouting",
 			    set_raw, 0, 0, CLIF_EXTRA },
 	{ 0, "mtu", 0, "Discover MTU along the path being traced. "
 			    "Implies `-F -N 1'",
@@ -1197,7 +1198,7 @@ void tune_socket (int sk) {
 		)  error ("setsockopt IPV6_FLOWINFO_SEND");
 	    }
 	}
-  
+
 
 	if (noroute) {
 	    i = noroute;

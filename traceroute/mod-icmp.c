@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <poll.h>
+#include <linux/in6.h>
 #include <netinet/icmp6.h>
 #include <netinet/ip_icmp.h>
 #include <netinet/in.h>
@@ -112,7 +113,7 @@ static int icmp_init (const sockaddr_any *dest,
 
 
 	add_poll (icmp_sk, POLLIN | POLLERR);
- 
+
 	return 0;
 }
 

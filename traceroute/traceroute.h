@@ -7,6 +7,7 @@
 */
 
 #include <netinet/in.h>
+#include <linux/icmp.h>
 
 #include <clif.h>
 
@@ -104,4 +105,3 @@ static void __init_ ## MOD (void) {	\
 				\
 	tr_register_module (&MOD);	\
 }
-

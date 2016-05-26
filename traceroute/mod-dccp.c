@@ -18,6 +18,8 @@
 #include "traceroute.h"
 
 
+#define SOCK_DCCP 6
+
 #define DEF_SERVICE_CODE 	1885957735
 
 #define DCCP_HEADER_LEN		(sizeof (struct dccp_hdr) + \
